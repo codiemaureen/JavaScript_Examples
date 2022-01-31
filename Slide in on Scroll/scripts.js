@@ -1,24 +1,36 @@
-  const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+    function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
 
-  let lastChecked;
+    const sliderImages = document.querySelectorAll('.slide-in');
 
-  function handleClick(e){
-    //check if the shift key is down
-    //check if the box is being check or undchecked
-    let inBetween = false;
-
-    if(e.shiftKey && this.checked){
-      //loop over each key
-      checkboxes.forEach(checkbox => {
-        if(checkbox === this || checkbox === lastChecked){
-          inBetween = !inBetween;
-        }
-        if(inBetween){
-          checkbox.checked = true;
+    function checkSlide(e){
+      console.log(window.scrollY);
+      sliderImages.forEach(sliderImage =>  {
+        // halfway through the image
+        const slideInAt = (window.scrollY + window.innerHeight);
+        sliderImage.height / 2;
+        //bottom of the image
+        const imageBottom = sliderImage.offsetTop + sliderImage.height;
+        const isHalfShown = slideInAt > sliderImage.offsetTop;
+        const isNotScrolledPast = window.scrollY < imageBottom;
+        if(isHalfShown && isNotScrolledPast)      {
+          sliderImage.classList.add('active');
+        } else {
+          sliderImage.classList.remove('active');
         }
       })
     }
 
-    lastChecked = this;
-  }
-  checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleClick));
+    window.addEventListener('scroll', debounce(checkSlide))
