@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Scoped CSS Variables and JS</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
@@ -20,61 +21,6 @@
 
   <img src="https://images.pexels.com/photos/8311418/pexels-photo-8311418.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260">
 
-  <style>
-    :root{ 
-      --base: #464E49;
-      --spacing: 10px;
-      --blur: 10px;
-    }
-
-    img{ 
-      padding: var(--spacing);
-      background: var(--base);
-      filter: blur(var(--blur));
-    }
-
-
-    .h1 {
-      color: var(--base);
-    }
-
-    /*
-      misc styles, nothing to do with CSS variables
-    */
-
-    body {
-      text-align: center;
-      background: #93827F;
-      color: black;
-      font-family: 'Times New Roman', sans-serif;
-      font-weight: 100;
-      font-size: 50px;
-    }
-
-    .controls {
-      margin-bottom: 50px;
-    }
-
-    input {
-      width: 100px;
-      color: silver;
-    }
-
-    input[type=range] {
-    -webkit-appearance: none;
-    background-color: silver;
-    width: 200px;
-    height:15px;
-}
-
-    input[type="range"]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        background-color: black;
-        opacity: 0.5;
-        width: 10px;
-        height: 26px;
-    }
-  </style>
 
   <script src="scripts.js"></script>
 
