@@ -25,4 +25,20 @@ function paintToCanvas(){
     }, 16);
 };
 
+function takePhoto() {
+    snap.currentTime = 0;
+    snap.play();
+
+    // take the date out of the canvas
+    const data = canvas.toDataURL('image/jpeg');
+    const link = document.createElement('a');
+    link.href = data;
+    link.setAttribute('download', 'Beautiful');
+    link.innerHTML = `<img src="${data}" alt="Beautiful Smile!"/>`;
+    strip.insertBefore(link, strip.firstChild);
+
+};
+
 getVideo();
+
+video.addEventListener('canplay', paintToCanvas);
