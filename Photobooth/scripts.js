@@ -25,7 +25,7 @@ function paintToCanvas(){
 
         let pixels = ctx.getImageData(0, 0, width,height);
 
-        pixels = redEffect(pixels);
+        pixels = rgbSplit(pixels);
 
         ctx.putImageData(pixels, 0, 0);
         
@@ -48,12 +48,23 @@ function takePhoto() {
 
 function redEffect(pixels) {
     for(let i = 0; i < pixels.data.length; i+=4){
-        pixels.data[i + 0] = pixels.data[i + 0] + 150;
-        pixels.data[i + 1] = pixels.data[i + 1] - 75;
-        pixels.data[i + 2] = pixels.data[i + 2] * 0.5;
+        pixels.data[i + 0] = pixels.data[i + 0] + 150; //RED
+        pixels.data[i + 1] = pixels.data[i + 1] - 75; //GREEN
+        pixels.data[i + 2] = pixels.data[i + 2] * 0.5; //BLUE
     }
     return pixels;
-}
+};
+
+function rgbSplit(pixels) {
+    for(let i = 0; i < pixels.data.length; i+=4){
+        pixels.data[i - 150] = pixels.data[i + 0]; //RED
+        pixels.data[i + 100] = pixels.data[i + 1]; //GREEN
+        pixels.data[i - 150] = pixels.data[i + 2]; //BLUE
+    }
+    return pixels;
+};
+
+
 
 getVideo();
 
