@@ -5,15 +5,19 @@ const options = document.querySelectorAll('[type="range"], [name="text"]');
 const speakButton = document.querySelector('#speak');
 const stopButton = document.querySelector('#stop');
 
-msg.text = document.querySelector('[name="text"]').nodeValue;
+msg.text = document.querySelector('[name="text"]').value;
 
 
 function populateVoices(){
     voices = this.getVoices();
-    const voiceOptions = voices
+    voicesDropdown.innerHTML  = voices
         .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`)
         .join('');
-        voicesDropdown.innerHTML = voiceOptions;
+};
+
+function setVoice(){
+    msg.voice = voices.find(voice => voice.name === this.value);
 }
 
 speechSynthesis.addEventListener('voiceschanged', populateVoices);
+voicesDropdown.addEventListener('change', setVoice);
