@@ -12,7 +12,9 @@ recognition.addEventListener('result', e => {
         .map(result => result[0])
         .map(result => result.transcript)
         .join('')
+
+        p.textContent = transcript;
     console.log(transcript);
 });
-
+recognition.addEventListener('end', recognition.start);
 recognition.start();
