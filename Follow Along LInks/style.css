@@ -50,6 +50,7 @@ a {
   list-style: none;
   justify-content: center;
   margin: 100px 0;
+  font-weight: 550;
 }
 
 .menu a {
@@ -57,5 +58,4 @@ a {
   padding: 5px;
   margin: 0 20px;
   color: #4b3f30;
-  font-weight: 550;
 }
