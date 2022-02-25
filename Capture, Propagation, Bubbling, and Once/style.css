@@ -1,0 +1,33 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+div {
+  width: 100%;
+  padding: 100px;
+  color: white;
+}
+
+.one {
+  background: #b79f7b;
+}
+
+.two {
+  background: #6b6f4e;
+}
+
+span {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 50px;
+}
+.three {
+  background: #1e3f20;
+}
