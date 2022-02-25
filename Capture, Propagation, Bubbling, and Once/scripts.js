@@ -7,4 +7,5 @@ function showText(e){
 
 divs.forEach(div => div.addEventListener('click', showText, {
     capture: true, //start at the top
+    once: true, //listen to event once
 }));
