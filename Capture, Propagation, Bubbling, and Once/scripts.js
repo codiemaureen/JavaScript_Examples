@@ -1,6 +1,7 @@
 const divs = document.querySelectorAll('div');
 
 function showText(e){
+    e.stopPropagation(); //stop bubbling
     console.log(this);
 }
 
