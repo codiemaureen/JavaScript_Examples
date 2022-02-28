@@ -23,9 +23,7 @@ function makePink() {
 
 
     // warning!
-
-
-
+    console.warn('Watch out!');
 
     // Error :|
 
