@@ -6,7 +6,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 
-ctx.strokeStyle = 'blue';
+ctx.strokeStyle = '#4c212a';
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 
@@ -15,7 +15,20 @@ let lastX = 0 ;
 let lastY = 0;
 
 function draw (e){
-  console.log(e);
-};
+  if(!isDrawing) return;
+  
+  //start drawing 
+  ctx.beginPath();
+  ctx.moveTo(lastX, lastY);
+  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.stroke();
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+
+
+
+}
 
 canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mousedown', () =>  isDrawing = true);
+canvas.addEventListener('mouseup', () =>  isDrawing = false);
+canvas.addEventListener('mouseout', () =>  isDrawing = false);
