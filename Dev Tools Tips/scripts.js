@@ -61,6 +61,21 @@ function makePink() {
 
     // counting
 
+    console.count('Malley');
+    console.count('Malley');
+
+    console.count('Codie');
+
+    console.count('Codie');
+    console.count('Malley');
+    console.count('Libby');
+    console.count('Libby');
+    console.count('Libby');
+    console.count('Libby');
+    console.count('Malley');
+    console.count('Codie');
+    console.count('Logan');
+
 
 
     // timing
