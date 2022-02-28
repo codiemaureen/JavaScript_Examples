@@ -81,7 +81,13 @@
     // 7. sort Exercise
     // Sort the people alphabetically by last name
 
+    const alpha = people.sort((a,b) => {
+      [a.last, aFirst] = a.split(', ');
+      [b.last, bFirst] = b.split(', ');
+      return a > b ? 1 : -1;
+    })
 
+    console.table(alpha);
     
     
     // 8. Reduce Exercise
