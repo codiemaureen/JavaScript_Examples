@@ -33,8 +33,7 @@ function makePink() {
 
 
     // Testing
-
-  
+    console.assert(1 === 2, 'This is the wrong way');  
 
 
     // clearing
