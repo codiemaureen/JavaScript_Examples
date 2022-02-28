@@ -19,7 +19,6 @@
     // Array.prototype.some() // is at least one person 19 or older?
 
 
-
     // Array.prototype.every() // is everyone 19 or older?
 
     // Array.prototype.find()
