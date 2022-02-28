@@ -37,11 +37,15 @@ function makePink() {
 
 
     // clearing
+    console.clear();
+  
 
+    // Viewing DOM Elements
+    const p = document.querySelector('p');
 
+    console.log(p);
 
-
-
+    console.dir(p);
     // Grouping together
 
 
