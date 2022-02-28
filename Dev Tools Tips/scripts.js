@@ -14,7 +14,7 @@ function makePink() {
 
 
     // Interpolated
-
+    console.log('This is a great %s string', '🌿');
 
 
     // Styled
