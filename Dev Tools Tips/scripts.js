@@ -18,6 +18,7 @@ function makePink() {
 
 
     // Styled
+    console.log('%c This is a gigantic string', 'font-size:75px;')
 
 
 
