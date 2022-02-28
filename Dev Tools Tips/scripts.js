@@ -25,11 +25,11 @@ function makePink() {
     // warning!
     console.warn('Watch out!');
 
-    // Error :|
-
+    // Error
+    console.error('You should have known better');
 
     // Info
-
+    console.info('Heres your sign')
 
 
     // Testing
