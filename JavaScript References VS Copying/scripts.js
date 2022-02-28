@@ -28,3 +28,22 @@ console.log(team4);
 //copy with Array.from()
 const team5 = Array.from(team4);
 console.log(players);
+
+
+//Copying Objects
+
+const person = {
+  name: 'Codie', 
+  age: 100
+};
+
+const person2 = Object.assign({}, person, { number: 12, color: 'Green'});
+
+console.table(person);
+console.table(person2);
+
+//copy with object spread
+const person3 = {...person};
+console.table(person3);
+
+//note to self copying is only one level deep
