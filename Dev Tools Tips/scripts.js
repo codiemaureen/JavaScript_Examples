@@ -38,7 +38,7 @@ function makePink() {
 
     // clearing
     console.clear();
-  
+
 
     // Viewing DOM Elements
     const p = document.querySelector('p');
@@ -46,8 +46,17 @@ function makePink() {
     console.log(p);
 
     console.dir(p);
-    // Grouping together
 
+
+    // Grouping together
+    const dogs = [{ name: 'Libby', age: 7 }, { name: 'Malley', age: 11 }];
+    dogs.forEach(dog => {
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`this is ${dog.name}`);
+        console.log(`this is ${dog.name} and they are ${dog.age} years old`);
+        console.log(`this is ${dog.name} and they are ${dog.age} years old in dog years`);
+        console.groupEnd(`${dog.name}`);
+    });
 
 
     // counting
