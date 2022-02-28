@@ -2,5 +2,12 @@
   const ctx = canvas.getContext('2d');
 
 //size canvas
-ctx.width = window.innerWidth;
-ctx.height = window.innerHeight;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+
+ctx.strokeStyle = 'blue';
+ctx.lineJoin = 'round';
+ctx.lineCap = 'round';
+
+let isDrawing = false;
