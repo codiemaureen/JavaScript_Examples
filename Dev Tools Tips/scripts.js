@@ -79,5 +79,10 @@ function makePink() {
 
 
     // timing
-
-  
+    console.time('fetching data!');
+    fetch('https://api.github.com/users/codiemaureen')
+        .then(blob => blob.json())
+        .then(data => {
+        console.timeEnd('fetching data!');
+        console.log(data);
+    });
