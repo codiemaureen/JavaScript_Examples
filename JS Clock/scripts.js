@@ -1,4 +1,5 @@
 const secondHand = document.querySelector('.second-hand');
+const minsHand = document.querySelector('.min-hand');
 
 function setDate(){
   const now = new Date();
@@ -6,6 +7,11 @@ function setDate(){
   const secondsDegrees = ((seconds / 60) * 360) + 90;
   secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
   console.log(seconds);
+
+  const mins = now.getMinutes();
+  const minDegrees = ((mins / 60) * 360) + 90;
+  minsHand.style.transform = `rotate(${minDegrees}deg)`;
+
 }
 
 setInterval(setDate, 1000);
