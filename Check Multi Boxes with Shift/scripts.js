@@ -9,7 +9,9 @@ function handleClick(e){
     checkboxes.forEach(checkbox => {
       if(checkbox === this || checkbox === lastChecked){
         inBetween = !inBetween;
-        console.log(checkbox);
+      }
+      if(inBetween){
+        checkbox.checked = true;
       }
     });
   };
