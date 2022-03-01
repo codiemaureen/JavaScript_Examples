@@ -23,12 +23,16 @@ function displayMatches(){
     return `
     <li>
     <span class="place">${cityName}, ${stateName}</span>
-    <span class="population">${place.population}</span>
+    <span class="population">${numberWithCommas(place.population)}</span>
     </li>
     `;
     }).join('');
     suggestions.innerHTML = html;
 };
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
 
 const searchInput = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
